@@ -45,7 +45,7 @@ const float cameraRotationSpeed = glm::radians(10.0f);
 const float cameraYawPitchSpeed = 0.05f;
 int lastXmouse = 0;
 int lastYmouse = 0;
-int mainBifurcations = 1; // 0: cube spinning (better for shaders that use textures)
+int mainBifurcations = 0; // 0: cube spinning (better for shaders that use textures)
 						  // 1: cube spinning and suzanne orbitting (better for ilumination)
 						  // 2: suzanne spinning (better for disney shader demonstrations)
 						  // 3: suzanne uploaded from folder with calculated normals (for optional part 6)
@@ -55,8 +55,8 @@ int main(int argc, char **argv)
 #ifdef _WIN32
 	std::locale::global(std::locale("spanish")); // Spanish accents
 #endif
-	std::string vertexShader = std::string(SHADERS_PATH) + "/shader.ob1.vert";
-	std::string fragmentShader = std::string(SHADERS_PATH) + "/shader.ob1.frag";
+	std::string vertexShader = std::string(SHADERS_PATH) + "/shader.op5.vert";
+	std::string fragmentShader = std::string(SHADERS_PATH) + "/shader.op5.frag";
 	if (!IGlib::init(vertexShader.c_str(), fragmentShader.c_str()))
 		return -1;
 
