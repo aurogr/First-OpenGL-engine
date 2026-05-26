@@ -497,11 +497,10 @@ void resizeFunc(int width, int height)
 	glViewport(0, 0, width, height);
 	proj = glm::perspective(glm::radians(60.0f), float(width) / float(height), 1.0f, 50.0f);
 
-	fboMainRender.Resize(SCREEN_SIZE, false, false);
-	fboGBHoz.Resize(SCREEN_SIZE, false, false);
-	fboGBVert.Resize(SCREEN_SIZE, false, false);
-	fboDOF.Resize(SCREEN_SIZE, true, false);
-
+    fboMainRender.Resize(width, height, false, false);
+    fboGBHoz.Resize(width, height, false, false);
+    fboGBVert.Resize(width, height, false, false);
+    fboDOF.Resize(width, height, true, false);
 	glutPostRedisplay();
 }
 
